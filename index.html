@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Ancient Flappy Bird</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game-container">
+
+    <!-- MENU SCREEN -->
+    <div id="menu">
+        <canvas id="menu-bg"></canvas>
+
+        <div id="menu-box">
+            <h1>FLAPPY ANCIENT</h1>
+            <button id="btn-new" class="menu-btn green">New Game</button>
+            <button id="btn-settings" class="menu-btn blue">Settings</button>
+            <button id="btn-quit" class="menu-btn red">Quit</button>
+        </div>
+    </div>
+
+    <!-- SETTINGS PANEL -->
+    <div id="settings" class="hidden">
+        <h2>Settings</h2>
+
+        <label>Bird Color:</label>
+        <input type="color" id="birdColorPicker" value="#00aa00">
+
+        <label>Eye Size:</label>
+        <input type="range" id="eyeSizeSlider" min="5" max="20" value="10">
+
+        <label>Music Volume:</label>
+        <input type="range" id="musicVol" min="0" max="100" value="50">
+
+        <label>SFX Volume:</label>
+        <input type="range" id="sfxVol" min="0" max="100" value="70">
+
+        <label>
+            <input type="checkbox" id="muteToggle"> Mute
+        </label>
+
+        <button id="btn-back">Back</button>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="game" class="hidden">
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="hud">
+            <div id="score">0</div>
+        </div>
+
+        <div id="countdown" class="hidden">3</div>
+
+        <div id="game-over" class="hidden">
+            <h1>GAME OVER</h1>
+            <button id="btn-reset">Reset</button>
+            <button id="btn-menu">Menu</button>
+        </div>
+    </div>
+
+</div>
+
+<audio id="menuMusic" loop>
+    <source src="menu-music.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="gameMusic" loop>
+    <source src="game-music.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="passSound">
+    <source src="pass.wav" type="audio/wav">
+</audio>
+
+<audio id="hitSound">
+    <source src="hit.wav" type="audio/wav">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
